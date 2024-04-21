@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block content %}
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"/>
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="border p-4">
+        {% csrf_token %}
+ <fieldset class="mb-4">
+        <legend class="mb-3">Profile Info</legend>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                {{ u_form.username.label_tag }}
+                {{ u_form.username }}
+                {% if u_form.username.errors %}
+                <div class="text-danger">
+                    {{ u_form.username.errors }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {{ u_form.email.label_tag }}
+                {{ u_form.email }}
+                {% if u_form.email.errors %}
+                <div class="text-danger">
+                    {{ u_form.email.errors }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                {{ u_form.first_name.label_tag }}
+                {{ u_form.first_name }}
+                {% if u_form.first_name.errors %}
+                <div class="text-danger">
+                    {{ u_form.first_name.errors }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {{ u_form.last_name.label_tag }}
+                {{ u_form.last_name }}
+                {% if u_form.last_name.errors %}
+                <div class="text-danger">
+                    {{ u_form.last_name.errors }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                {{ p_form.image.label_tag }}
+                {{ p_form.image }}
+                {% if p_form.image.errors %}
+                <div class="text-danger">
+                    {{ p_form.image.errors }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </fieldset>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Update</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

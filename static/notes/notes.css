@@ -1,0 +1,18 @@
+#noteList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#noteList div {
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: move;
+}
+
+#noteList div.ui-sortable-placeholder {
+    background-color: #e5e5e5;
+    border: 1px dashed #aaa;
+    visibility: visible !important;
+    height: 50px; /* Set the height of the placeholder */
+}

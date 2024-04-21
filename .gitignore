@@ -1,0 +1,8 @@
+/.venv/
+/aws/
+/eb-virt/
+/db.sqlite3
+/.idea/
+/.pytest_cache/
+/awscliv2.zip
+/notes.txt

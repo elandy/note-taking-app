@@ -1,0 +1,3 @@
+Fix Ajax Callback: Investigate and resolve the issue with the note_drag_drop script not correctly sending the note ordering to the notes.reorder endpoint.
+
+Add Note Colors: Implement functionality to add color options to notes in the Notes model. Update the template to display notes with their respective colors.
